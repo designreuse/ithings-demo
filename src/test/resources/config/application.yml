@@ -1,0 +1,69 @@
+server:
+    port: 10344
+    address: localhost
+
+
+# security configuration (this key should be unique for your application, and kept secret)
+jhipster.security.rememberme.key: iThingsDemo
+
+async:
+    corePoolSize: 2
+    maxPoolSize: 50
+    queueCapacity: 10000
+
+spring:
+    profiles: test
+    
+    main:
+        showBanner: false
+     
+    datasource:
+        dataSourceClassName: org.h2.jdbcx.JdbcDataSource
+        url: jdbc:h2:mem:iThingsDemo
+        databaseName:
+        serverName:
+        username:
+        password:
+
+    jpa:
+        database-platform: org.hibernate.dialect.H2Dialect
+        database: H2
+        openInView: false
+        show_sql: false
+        generate-ddl: false
+        hibernate:
+            ddl-auto: none
+            naming-strategy: org.hibernate.cfg.EJB3NamingStrategy
+        properties:
+            hibernate.format_sql: false
+            hibernate.cache.use_second_level_cache: false
+            hibernate.cache.use_query_cache: false
+            hibernate.generate_statistics: false
+            hibernate.cache.region.factory_class: ch.ithings.demo.config.hazelcast.HazelcastCacheRegionFactory
+            hibernate.cache.use_minimal_puts: true
+            hibernate.cache.hazelcast.use_lite_member: true
+            hibernate.jdbc.batch_size: 3000
+            hibernate.order_updates: true
+            hibernate.order_inserts: true
+            hibernate.max_fetch_depth: 1
+
+    mail:
+        host: localhost
+        port: 25
+        user:
+        password:
+        protocol: smtp
+        tls: false
+        auth: false
+
+metrics:
+    jmx.enabled: false
+    
+swagger:
+    apiDocsLocation: http://localhost:8080
+    title: iThings Demo API
+    description: iThings Demo applications and beyond!
+    termsOfServiceUrl: http://www.ithings.ch/terms
+    contact: thomas.pham@ithings.ch
+    license: Apache 2.0
+    licenseUrl: http://www.apache.org/licenses/LICENSE-2.0.html    

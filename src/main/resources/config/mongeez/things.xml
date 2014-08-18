@@ -1,0 +1,30 @@
+<mongoChangeLog>
+    <changeSet changeId="ChangeSet-1" author="jhipster">
+        <script>
+            db.Things.insert(
+            {
+                "_id" : "system", "password" : "",
+                "first_name": "",
+                "last_name": "System",
+                "email": "",
+                "activated": "true",
+                "lang_key": "en",
+                "created_by": "system",
+                "created_date": new Date(),
+                "authorities": [{"_id": "ROLE_ADMIN"}, {"_id": "ROLE_USER"}]
+            });
+            db.Things.insert(
+            {
+                "_id" : "anonymousUser", "password" : "",
+                "first_name": "Anonymous",
+                "last_name": "User",
+                "email": "",
+                "activated": "true",
+                "lang_key": "en",
+                "created_by": "system",
+                "created_date": new Date(),
+                "authorities": []
+            });
+        </script>
+    </changeSet>
+</mongoChangeLog>

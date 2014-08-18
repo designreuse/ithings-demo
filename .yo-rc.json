@@ -1,0 +1,18 @@
+{
+  "generator-jhipster": {
+    "baseName": "iThings Demo",
+    "packageName": "ch.ithings.demo",
+    "packageFolder": "ch/ithings/demo",
+    "authenticationType": "token",
+    "hibernateCache": "hazelcast",
+    "clusteredHttpSession": "hazelcast",
+    "websocket": "atmosphere",
+    "databaseType": "sql",
+    "devDatabaseType": "h2Memory",
+    "prodDatabaseType": "mysql",
+    "useCompass": false,
+    "buildTool": "maven",
+    "frontendBuilder": "grunt",
+    "javaVersion": "7"
+  }
+}

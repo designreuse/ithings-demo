@@ -1,0 +1,72 @@
+server:
+    port: 8080
+
+spring:
+    profiles: test
+    data:
+        mongodb:
+            host: localhost
+            port: 27017
+            databaseName: ithings-test
+            gridFsDatabase:
+        
+        elasticsearch:
+            clusterName: ithings-test
+            clusterNodes: 
+
+    datasource:
+        uniqueId: one
+        dataSourceClassName: org.h2.jdbcx.JdbcDataSource
+        url: jdbc:h2:mem:iThingsDemo
+        databaseName: 
+        serverName: 
+        username: 
+        password:
+
+    jpa:
+        database-platform: org.hibernate.dialect.H2Dialect
+        database: H2
+        openInView: false
+        show_sql: false
+        generate-ddl: false
+        hibernate:
+            ddl-auto: none
+            naming-strategy: org.hibernate.cfg.EJB3NamingStrategy
+        properties:
+            hibernate.format_sql: false
+            hibernate.cache.use_second_level_cache: true
+            hibernate.cache.use_query_cache: false
+            hibernate.generate_statistics: true
+            hibernate.cache.region.factory_class: ch.ithings.demo.config.hazelcast.HazelcastCacheRegionFactory
+            hibernate.cache.use_minimal_puts: true
+            hibernate.cache.hazelcast.use_lite_member: true
+            hibernate.jdbc.batch_size: 3000
+            hibernate.order_updates: true
+            hibernate.order_inserts: true
+            hibernate.max_fetch_depth: 1
+            #hibernate.default_schema: public
+            #hibernate.multiTenancy: SCHEMA
+            #hibernate.multi_tenant_connection_provider: ch.ithings.demo.config.persistence.MultiTenantConnectionProviderImpl
+            #hibernate.tenant_identifier_resolver: ch.ithings.demo.config.persistence.CurrentTenantIdentifierResolverImpl
+
+    mail:
+        baseUrl: http://localhost:8080
+
+    thymeleaf:
+        mode: XHTML
+        cache: false
+
+metrics:
+    jmx.enabled: false
+    graphite:
+        enabled: false
+        host: localhost
+        port: 2003
+
+cache:
+    timeToLiveSeconds: 3600
+    hazelcast:
+        debug: true
+        stickySession: false
+        backupCount: 1
+
