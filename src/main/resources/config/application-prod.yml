@@ -20,9 +20,9 @@ spring:
     datasource:
         uniqueId: one
         dataSourceClassName: com.mysql.jdbc.jdbc2.optional.MysqlDataSource
-        url: jdbc:mariadb://192.168.22.22:3306/iThingsDemo
+        url: jdbc:mysql://127.0.0.1:3306/iThingsDemo
         databaseName: iThingsDemo
-        serverName: 192.68.22.22
+        serverName: 127.0.0.1
         username: root
         password: s3cret
 
