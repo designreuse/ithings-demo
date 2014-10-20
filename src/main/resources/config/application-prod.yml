@@ -19,7 +19,7 @@ spring:
 
     datasource:
         uniqueId: one
-        dataSourceClassName: org.mariadb.jdbc.MySQLDataSource
+        dataSourceClassName: com.mysql.jdbc.jdbc2.optional.MysqlDataSource
         url: jdbc:mariadb://192.168.22.22:3306/iThingsDemo
         databaseName: iThingsDemo
         serverName: 192.68.22.22
